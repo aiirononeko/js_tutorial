@@ -65,3 +65,38 @@ console.log(nannan);
 
 const pinf = Number.POSITIVE_INFINITY;
 console.log(pinf);
+
+console.log("He looked up and said \"dont do that!\" to Max");
+console.log(`He looked up and said "dont do that!" to Max.`);
+
+// テンプレートリテラル
+let currentTemp = 19.5;
+const message = `現在の温度は${currentTemp}℃です`;
+console.log(message);
+
+const multiple = "現在の温度は\n" +
+  `${currentTemp}℃です。\n` +
+  "もうじき暖かくなります";
+console.log(multiple);
+
+// 文字列としての数値
+const result1 = 3 + '30';
+console.log(result1);
+const result2 = 3 * '30';
+console.log(result2);
+
+// シンボルについて
+const RED = Symbol();
+const BLUE = Symbol();
+const ORENGE = Symbol('夕日の色');
+console.log(RED);
+console.log(BLUE);
+console.log(ORENGE);
+console.log(RED == BLUE);
+
+let hoge;
+console.log(hoge);
+hoge = null;
+console.log(hoge);
+
+
