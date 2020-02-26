@@ -99,4 +99,154 @@ console.log(hoge);
 hoge = null;
 console.log(hoge);
 
+console.log("----------------------------------------")
 
+// オブジェクト
+const obj = {};
+obj.color = "黄色";
+console.log(obj.color);
+
+obj["not an identifier"] = 3;
+console.log(obj["not an identifier"]);
+console.log(obj["color"]);
+console.log(obj.size);
+
+const SIZE = Symbol();
+obj[SIZE] = 8;
+console.log(obj[SIZE]);
+console.log(obj);
+obj.SIZE = 12;
+console.log(obj.SIZE);
+console.log(obj["SIZE"]);
+console.log(obj[SIZE]);
+console.log(obj);
+
+// プリミティブ型とオブジェクト型の違い
+// 同じ文字列でもプリミティブ型の文字列とStringオブジェクトでラッパーした文字列は、(==)ではtrueとなるものの、(===)では厳密な比較がされるためfalseになる
+const str_hoge = "hoge";
+const wrapper_hoge = new String("hoge");
+console.log(str_hoge == wrapper_hoge);
+console.log(str_hoge === wrapper_hoge);
+
+const saml = {
+  name: 'Sam',
+  age: 4
+};
+console.log(saml);
+
+const sam2 = { name: 'Sam', age: 4 };
+console.log(sam2);
+
+console.log(saml.name === sam2.name);
+console.log(saml.age === sam2.age);
+console.log(saml === sam2);
+
+const sam3 = {
+  name: 'Sam',
+  classification: {
+    kingdom: 'Animalia',
+    phyum: 'Chordata',
+    class: 'Mamalia',
+    order: 'Carnicoria'
+  }
+};
+console.log(sam3);
+
+sam3.speak = function() { return 'Meow!'; };
+console.log(sam3.speak());
+
+delete sam3.classification;
+delete sam3.speak;
+console.log(sam3);
+
+const s = 'hello';
+const s2 = s.toUpperCase();
+console.log(s2);
+
+s.rating = 3;
+console.log(s.rating);
+
+// 配列
+const a1 = [1, 2, 3, 4];
+const a2 = [1, 'two', 3, null];
+const a3 = [
+  "What the hammer?",
+  "In What furnace was thy brain?"
+];
+const a4 = [
+  {
+    name: "Ruby",
+    hardness: 9
+  },
+  {
+    name: "Diamond",
+    hardness: 10
+  }
+];
+const a5 = [
+  [1, 3, 5],
+  [2, 4, 6]
+];
+
+const a = ['a', 'b', 'c'];
+console.log(a.length);
+console.log(a[0]);
+console.log(a[a.length - 1]);
+console.log(a4[1].name);
+
+// Dataオブジェクトについて
+const now = new Date();
+console.log(now);
+
+const halloween = new Date(2016, 9, 31);
+console.log(halloween);
+
+const halloweenParty = new Date(2016, 9, 31, 19, 0);
+console.log(halloweenParty.getFullYear());
+console.log(halloweenParty.getMonth());
+console.log(halloweenParty.getDate());
+console.log(halloweenParty.getHours());
+console.log(halloweenParty.getMinutes());
+console.log(halloweenParty.getSeconds());
+console.log(halloweenParty.getMilliseconds());
+
+// 型変換
+const numStr = "33.3";
+console.log(numStr);
+const num = Number(numStr);
+console.log(num);
+
+const ai = parseInt("16 volts", 10);
+console.log(ai);
+const bi = parseInt("3a", 16);
+console.log(bi);
+const ci = parseFloat("15.5 kph");
+console.log(ci);
+
+const d = new Date();
+console.log(d);
+const ts = d.valueOf();
+console.log(ts);
+
+const t = true;
+const f = false;
+const n = t ? 1 : 0;
+console.log(n);
+const m = f ? 1 : 0;
+console.log(m);
+
+const n3 = 33.5;
+const s3 = n3.toString();
+
+console.log(now.toString());
+const arr = [1, true, "hello"];
+console.log(arr.toString());
+
+const h = 0;
+const b0 = !h;
+const b1 = !!h;
+const b2 = Boolean(h);
+console.log(h);
+console.log(b0);
+console.log(b1);
+console.log(b2);
