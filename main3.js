@@ -23,6 +23,14 @@ while (win == 0) {
     let bets = {crown: 0, anchor: 0, heart: 0, spade: 0, club: 0, diamond: 0};
     let totalBet = rand(1, funds);
 
+    if (new Date().getDate() == 3) {
+      totalBet = 1;
+    } else if (funds == 7) {
+      totalBet = 7;
+    } else {
+      console.log('縁起担ぎはなし');
+    };
+
     if (totalBet == 7) { // 全部賭ける
       totalBet = funds;
       bets.heart = totalBet;
